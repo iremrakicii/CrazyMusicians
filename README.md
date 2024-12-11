@@ -7,6 +7,7 @@ URL: GET /api/musicians
 Açıklama: Sistemdeki tüm müzisyenlerin bilgilerini döner.
 Örnek Yanıt:
 json
+ ```
 [
     {
         "id": 1,
@@ -21,6 +22,7 @@ json
         "funFeature": "Şarkıları yanlış anlaşılır ama çok popüler."
     }
 ]
+ ```
 ## 2. İsme Göre Müzisyen Arama
 URL: GET /api/musicians/search
 Query Parametreleri:
@@ -30,7 +32,7 @@ Açıklama: İsme göre müzisyenleri filtreler.
 sql
 GET /api/musicians/search?name=Ahmet
 Örnek Yanıt:
-json
+ ```json
 [
     {
         "id": 1,
@@ -39,58 +41,62 @@ json
         "funFeature": "Her zaman yanlış nota çalar, ama çok eğlenceli."
     }
 ]
+ ```
 ## 3. ID ile Müzisyen Getir
 URL: GET /api/musicians/{id}
 Açıklama: Belirtilen ID'ye sahip müzisyenin bilgilerini döner.
 Örnek Yanıt:
-json
+ ```json
 {
     "id": 3,
     "name": "Cemil Akor",
     "profession": "Çılgın Akorist",
     "funFeature": "Akorları sık değiştirir, ama şaşırtıcı derecede yetenekli."
 }
+ ```
 ## 4. Yeni Müzisyen Ekle
 URL: POST /api/musicians
 Açıklama: Sisteme yeni bir müzisyen ekler.
 Body:
-json
+ ```json
 {
     "id": 11,
     "name": "Yeni Müzisyen",
     "profession": "Yeni Meslek",
     "funFeature": "Yeni eğlenceli özellik"
-}
+} ```
 Örnek Yanıt: (Başarılı Ekleme)
-json
+ ```json
 {
     "id": 11,
     "name": "Yeni Müzisyen",
     "profession": "Yeni Meslek",
     "funFeature": "Yeni eğlenceli özellik"
-}
-## 5. Müzisyen Bilgilerini Güncelle
+} ```
+##5. Müzisyen Bilgilerini Güncelle
 URL: PUT /api/musicians/{id}
 Açıklama: Belirtilen ID'ye sahip müzisyenin tüm bilgilerini günceller.
 Body:
-json
+ ```json
 {
     "name": "Güncellenmiş İsim",
     "profession": "Güncellenmiş Meslek",
     "funFeature": "Güncellenmiş Eğlenceli Özellik"
-}
-Örnek Yanıt:
-HTTP 204 No Content (Başarılı Güncelleme)
-## 6. Eğlenceli Özelliği Güncelle
-URL: PATCH /api/musicians/{id}
-Açıklama: Müzisyenin yalnızca eğlenceli özelliğini değiştirir.
-Body:
-json
-"Yeni eğlenceli özellik"
+} ```
 Örnek Yanıt:
 HTTP 204 No Content (Başarılı Güncelleme)
 
-## 7. Müzisyen Sil
+### 6. Eğlenceli Özelliği Güncelle
+URL: PATCH /api/musicians/{id}
+Açıklama: Müzisyenin yalnızca eğlenceli özelliğini değiştirir.
+Body:
+ ```json
+"Yeni eğlenceli özellik"
+Örnek Yanıt:
+HTTP 204 No Content (Başarılı Güncelleme)
+```
+
+### 7. Müzisyen Sil
 URL: DELETE /api/musicians/{id}
 Açıklama: Belirtilen ID'ye sahip müzisyeni sistemden siler.
 Örnek Yanıt:
@@ -98,7 +104,7 @@ HTTP 204 No Content (Başarılı Silme)
 Veri Modeli
 Müzisyenlerin sistemdeki temsili aşağıdaki gibidir:
 
-csharp
+ ```csharp
 
 public class Musician
 {
@@ -107,3 +113,4 @@ public class Musician
     public string Profession { get; set; }
     public string FunFeature { get; set; }
 }
+```
