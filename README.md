@@ -1,4 +1,4 @@
-Crazy Musicians API
+## Crazy Musicians API
 Crazy Musicians API, müzisyenlerle ilgili CRUD (Create, Read, Update, Delete) işlemleri yapmanızı sağlayan bir RESTful API'dir. Bu API ile müzisyenleri listeleyebilir, belirli kriterlere göre arama yapabilir, yeni müzisyenler ekleyebilir, var olanları güncelleyebilir veya silebilirsiniz.
 
 Endpoints ve Kullanım
@@ -72,8 +72,9 @@ Body:
     "name": "Yeni Müzisyen",
     "profession": "Yeni Meslek",
     "funFeature": "Yeni eğlenceli özellik"
-} ```
-##5. Müzisyen Bilgilerini Güncelle
+}
+```
+### 5. Müzisyen Bilgilerini Güncelle
 URL: PUT /api/musicians/{id}
 Açıklama: Belirtilen ID'ye sahip müzisyenin tüm bilgilerini günceller.
 Body:
@@ -82,7 +83,8 @@ Body:
     "name": "Güncellenmiş İsim",
     "profession": "Güncellenmiş Meslek",
     "funFeature": "Güncellenmiş Eğlenceli Özellik"
-} ```
+}
+```
 Örnek Yanıt:
 HTTP 204 No Content (Başarılı Güncelleme)
 
